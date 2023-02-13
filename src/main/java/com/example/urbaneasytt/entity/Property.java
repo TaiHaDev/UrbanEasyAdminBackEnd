@@ -24,7 +24,40 @@ public class Property {
     private String city;
     private String country;
     @Column(name = "street_address")
-    private String streetAdress;
+    private String streetAddress;
+
+    public Property() {
+
+    }
+    public Property(long id, String name, String description, String neighborhoodOverview, int totalGuest, int bedroom, int bed, double bath, long userId, String district, String city, String country, String streetAddress, double lng, double lat, double defaultPrice, int categoryId, long view) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.neighborhoodOverview = neighborhoodOverview;
+        this.totalGuest = totalGuest;
+        this.bedroom = bedroom;
+        this.bed = bed;
+        this.bath = bath;
+        this.userId = userId;
+        this.district = district;
+        this.city = city;
+        this.country = country;
+        this.streetAddress = streetAddress;
+        this.lng = lng;
+        this.lat = lat;
+        this.defaultPrice = defaultPrice;
+        this.categoryId = categoryId;
+        this.view = view;
+    }
+
+    public String getStreetAddress() {
+        return streetAddress;
+    }
+
+    public void setStreetAddress(String streetAddress) {
+        this.streetAddress = streetAddress;
+    }
+
     private double lng;
     private double lat;
     @Column(name = "default_price")
@@ -32,6 +65,7 @@ public class Property {
     @Column(name = "category_id")
     private int categoryId;
     private long view;
+
 
 
     public long getId() {
@@ -130,13 +164,7 @@ public class Property {
         this.country = country;
     }
 
-    public String getStreetAdress() {
-        return streetAdress;
-    }
 
-    public void setStreetAdress(String streetAdress) {
-        this.streetAdress = streetAdress;
-    }
 
     public double getLng() {
         return lng;
@@ -176,5 +204,29 @@ public class Property {
 
     public void setView(long view) {
         this.view = view;
+    }
+
+    @Override
+    public String toString() {
+        return "Property{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", neighborhoodOverview='" + neighborhoodOverview + '\'' +
+                ", totalGuest=" + totalGuest +
+                ", bedroom=" + bedroom +
+                ", bed=" + bed +
+                ", bath=" + bath +
+                ", userId=" + userId +
+                ", district='" + district + '\'' +
+                ", city='" + city + '\'' +
+                ", country='" + country + '\'' +
+                ", streetAddress='" + streetAddress + '\'' +
+                ", lng=" + lng +
+                ", lat=" + lat +
+                ", defaultPrice=" + defaultPrice +
+                ", categoryId=" + categoryId +
+                ", view=" + view +
+                '}';
     }
 }

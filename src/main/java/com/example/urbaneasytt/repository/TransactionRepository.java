@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public interface TransactionRepository extends JpaRepository<Booking, Long> {
     @Query(
-            value = "SELECT booking.id as bookingId, property.name as propertyName, user.user_name as userName, property.default_price as price, booking.date as dateBooked FROM Booking JOIN Property ON booking.property_id = property.id JOIN user ON user.id = booking.user_id",
+            value = "SELECT url as productImage, booking.id as bookingId, property.name as propertyName, user.user_name as userName, property.default_price as price, booking.date as dateBooked FROM Booking JOIN Property ON booking.property_id = property.id JOIN user ON user.id = booking.user_id JOIN asset ON asset.property_id = property.id WHERE asset.name = '1'",
             nativeQuery = true)
     List<Transaction> getTransactionDetail();
 }
